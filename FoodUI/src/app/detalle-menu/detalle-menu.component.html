@@ -1,14 +1,14 @@
 <table class="table">
   <tbody *ngIf="menu">
     <tr>
-      <th>{{menu.id}}</th>
+      <td>{{menu.id}}</td>
       <td>{{menu.nombre}}</td>
       <td>{{menu.fecha}}</td> 
       <td>
           <div class="container">
               <div class="btn-group btn-lg-group-sm">
-                <button type="button" class="btn btn-primary">Ir</button>
-                <button type="button" class="btn btn-primary">Delete</button>
+                <button type="button" class="btn btn-primary" (click)='deleteMenu()'>Delete</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='/listar/'+'/{{menu.id}}'" >{{menu.id}}</button> 
               </div>
             </div>
       </td>
