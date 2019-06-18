@@ -1,0 +1,17 @@
+<table class="table">
+  <tbody *ngIf="menu">
+    <tr>
+      <th>{{menu.id}}</th>
+      <td>{{menu.nombre}}</td>
+      <td>{{menu.fecha}}</td> 
+      <td>
+          <div class="container">
+              <div class="btn-group btn-lg-group-sm">
+                <button type="button" class="btn btn-primary">Ir</button>
+                <button type="button" class="btn btn-primary">Delete</button>
+              </div>
+            </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

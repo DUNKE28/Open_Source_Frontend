@@ -1,3 +1,16 @@
-<p>
-  lista-menu works!
-</p>
+<br/>
+<h2>Listado de Menus</h2>
+<br/>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <div *ngFor="let menu of menus">
+    <app-detalle-menu [menu]='menu'></app-detalle-menu>
+  </div></table>
+

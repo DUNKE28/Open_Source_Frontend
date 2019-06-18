@@ -12,6 +12,12 @@ import { DetalleOrdenComponent } from './detalle-orden/detalle-orden.component';
 import { ListaInsumoComponent } from './lista-insumo/lista-insumo.component';
 import { RegistrarMenuComponent } from './registrar-menu/registrar-menu.component';
 import { ListaMenuComponent } from './lista-menu/lista-menu.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { DetalleMenuComponent } from './detalle-menu/detalle-menu.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,10 +31,14 @@ import { ListaMenuComponent } from './lista-menu/lista-menu.component';
     DetalleOrdenComponent,
     ListaInsumoComponent,
     RegistrarMenuComponent,
-    ListaMenuComponent
+    ListaMenuComponent,
+    DetalleMenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

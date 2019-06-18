@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Menu } from '../model/menu';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-lista-menu',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaMenuComponent implements OnInit {
 
-  constructor() { }
+  menus:Menu[];
+
+  constructor(private menuService:MenuService) { }
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  loadData(){
+    this.menuService.getMenusList()
+    .subscribe(menus=>this.menus=menus);
   }
 
 }

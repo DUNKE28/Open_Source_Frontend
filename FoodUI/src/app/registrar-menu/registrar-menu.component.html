@@ -1,3 +1,20 @@
-<p>
-  registrar-menu works!
-</p>
+<br/>
+<h2>Registro de Menus</h2>
+<br/>
+<div>
+  <form (ngSubmit)="registrarMenu()">
+    <div class="form-group ">
+      <label for="nombre">Nombre :</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" 
+      placeholder="Ingrese el nombre" required [(ngModel)]="menu.nombre">
+    </div>
+    <div class="form-group ">
+      <label for="fecha">Fecha :</label>
+      <input id="fecha" name="fecha" [(ngModel)]="menu.fecha"
+         type="date" class="form-control">
+      <!--<input type="time" class= "form-control" name="fecha" required [(ngModel)]="menu.fecha">-->
+    </div>
+     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+  </form>
+</div>
+
