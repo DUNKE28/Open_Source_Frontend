@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-cliente',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginClienteComponent implements OnInit {
 
-  constructor() { }
+  username = ''
+  password = ''
+  invalidLogin = false
 
+  constructor(private loginservice: AuthenticationService,private router: Router) { }
+  
   ngOnInit() {
+  }
+
+  checkLogin() {
+    if (this.loginservice.authenticate(this.username, this.password)) {
+      this.invalidLogin = false;
+    } else
+      this.invalidLogin = true;
   }
 
 }

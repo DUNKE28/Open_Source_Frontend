@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetalleMenuComponent } from './detalle-menu/detalle-menu.component';
+import { LogoutClienteComponent } from './logout-cliente/logout-cliente.component';
 
 
 
@@ -32,7 +33,8 @@ import { DetalleMenuComponent } from './detalle-menu/detalle-menu.component';
     ListaInsumoComponent,
     RegistrarMenuComponent,
     ListaMenuComponent,
-    DetalleMenuComponent
+    DetalleMenuComponent,
+    LogoutClienteComponent
   ],
   imports: [
     BrowserModule,
