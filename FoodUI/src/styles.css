@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+.cascaron
+{
+  display: block !important;
+ 
+}
+.cascaron_invisible
+{
+    display: none !important;
+    
+}
+.cascaron2
+{
+  display: none !important;
+ 
+}
+.cascaron2_visible
+{
+  display: block !important;
+  
+}
