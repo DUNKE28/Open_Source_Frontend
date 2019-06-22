@@ -1,5 +1,5 @@
 export class Cliente {
-    dni: string;
+    dni: number;
     nombre: string;
     tipo: number;
     contraseña: string;

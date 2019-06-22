@@ -7,8 +7,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-  <app-root></app-root>
+  <app-login-cliente class="cascaron"></app-login-cliente>
+  <app-root class="cascaron2"></app-root>
 </body>
 </html>
+
+
+
+<script>
+
+$(document).ready(function()
+{
+  let user = sessionStorage.getItem('username');
+  if(user === null)
+  { 
+    $("app-login-cliente").removeClass("cascaron_invisible").addClass("cascaron");
+    $("app-root").removeClass("cascaron2_visible").addClass("cascaron2");
+  }
+  else
+  {
+    $("app-login-cliente").removeClass("cascaron").addClass("cascaron_invisible");
+    $("app-root").removeClass("cascaron2").addClass("cascaron2_visible");
+  }
+});
+$('.login-box input[type="submit"]').click(function(){    
+  let user = sessionStorage.getItem('username')
+  if(user === null)
+  { 
+    $("app-login-cliente").removeClass("cascaron_invisible").addClass("cascaron");
+    $("app-root").removeClass("cascaron2_visible").addClass("cascaron2");
+  }
+  else
+  {
+    $("app-login-cliente").removeClass("cascaron").addClass("cascaron_invisible");
+    $("app-root").removeClass("cascaron2").addClass("cascaron2_visible");
+  }
+});
+
+$('.gg a').click(function(){    
+  let user = sessionStorage.getItem('username')
+   if(user === null)
+  { 
+    $("app-login-cliente").removeClass("cascaron_invisible").addClass("cascaron");
+    $("app-root").removeClass("cascaron2_visible").addClass("cascaron2");
+  }
+  else
+  {
+    $("app-login-cliente").removeClass("cascaron").addClass("cascaron_invisible");
+    $("app-root").removeClass("cascaron2").addClass("cascaron2_visible");
+
+  }
+});
+
+
+</script>
+

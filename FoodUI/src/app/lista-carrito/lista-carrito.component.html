@@ -1,0 +1,53 @@
+<br/>
+<div class="flex_123">
+
+  <div class="flex_tittle">
+      <h2>Carrito:</h2>
+  </div>
+    <div class="botones">
+      <button class="btn btn-info" (click)="comprar()"> Comprar </button>
+      <button class="btn btn-info" (click)="cancelar()"> Cancelar Compra </button>
+      <input id="fecha" name="fecha" type="time" class="form-control" >
+  </div>
+
+</div>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Insumo</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let detalle of carritos">
+    <tr>
+      <td>{{detalle.id}}</td>
+      <td>{{detalle.precio}}</td>
+      <td>{{detalle.cantidad}}</td>
+      <td>{{detalle.insumo.nombre}}</td>
+      <td>
+          <div class="container">
+              <div class="btn-group btn-lg-group-sm">
+                <button type="button" class="btn btn-info btn-sm" (click)="deleteDetalle(detalle.id)">
+                  <i class="glyphicon-plus"></i>Detele  
+                </button>
+              </div>
+            </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<script>
+
+
+$('input').keydown(function()
+{
+  console.log("xdddddd");
+});
+
+</script>

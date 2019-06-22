@@ -1,0 +1,38 @@
+.contenedor
+{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3px solid black;
+
+
+}
+.contenedor_lista
+{
+    margin: 20px;
+    text-align: center;
+ 
+}
+.contenedor_title
+{
+    margin: 15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 40px;
+}
+h1
+{
+    font-size: 35px;
+    height: 40px;
+    margin-left: 6px;
+}
+.flex_cont
+{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+
+}

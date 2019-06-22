@@ -17,12 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetalleMenuComponent } from './detalle-menu/detalle-menu.component';
 import { LogoutClienteComponent } from './logout-cliente/logout-cliente.component';
+import { ListaSedeComponent } from './lista-sede/lista-sede.component';
+import { Globals } from './globals';
+import { ListaCarritoComponent } from './lista-carrito/lista-carrito.component'
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListaSedeComponent,
     LoginClienteComponent,
     LoginAdministradorComponent,
     RegistrarOrdenComponent,
@@ -34,7 +38,8 @@ import { LogoutClienteComponent } from './logout-cliente/logout-cliente.componen
     RegistrarMenuComponent,
     ListaMenuComponent,
     DetalleMenuComponent,
-    LogoutClienteComponent
+    LogoutClienteComponent,
+    ListaCarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ import { LogoutClienteComponent } from './logout-cliente/logout-cliente.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [Globals],
+  bootstrap: [LoginClienteComponent , AppComponent]
 })
 export class AppModule { }

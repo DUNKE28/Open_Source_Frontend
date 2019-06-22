@@ -28,7 +28,7 @@ export class MenuService {
   }
 
   getMenuById(id:number):Observable<any>{
-    return this.http.get(`${this.baseURL}/listarPorId/${id}`);
+    return this.http.get(`${this.baseURL}/${id}`);
   }
 
 }

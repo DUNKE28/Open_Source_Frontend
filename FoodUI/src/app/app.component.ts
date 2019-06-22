@@ -7,7 +7,7 @@ import { AuthenticationService } from './authentication.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'FoodUI';
+  title = 'FoodApp';
 
   constructor(private loginService:AuthenticationService){}
   ngOnInit(){

@@ -1,0 +1,9 @@
+<div class="contenedor">
+
+  <div *ngFor="let sede of sedes" class="contenedor_todo">
+          <div  class="contenedor_sede"  [routerLink]="['../listarMenus',sede.id]">
+          <img src="https://www.upc.edu.pe/nosotros/campus/campus-monterrico/img/monterrico-1.jpg">
+          <p class="sede">{{sede.nombre}}</p>
+          </div>
+  </div>
+</div>
