@@ -8,6 +8,7 @@ import { ListaSedeComponent } from './lista-sede/lista-sede.component';
 import { AuthGaurdService } from './auth-gaurd.service';
 import { ListaInsumoComponent } from './lista-insumo/lista-insumo.component';
 import { ListaCarritoComponent } from './lista-carrito/lista-carrito.component';
+import { ListaOrdenComponent } from './lista-orden/lista-orden.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -18,6 +19,9 @@ const routes: Routes = [
     {path:'listarCarrito', component:ListaCarritoComponent,canActivate:[AuthGaurdService]},
     {path:'nuevo', component:RegistrarMenuComponent,canActivate:[AuthGaurdService]},
     {path:'logout', component:LogoutClienteComponent,canActivate:[AuthGaurdService]},
+    {path:'listarOrdenes', component:ListaOrdenComponent,canActivate:[AuthGaurdService]},
+
+    
 ];
 
 @NgModule({

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Orden } from '../model/orden';
+import { OrdenService } from '../orden.service';
 
 @Component({
   selector: 'app-lista-orden',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaOrdenComponent implements OnInit {
 
-  constructor() { }
+  ordenes:Orden[]
+
+  constructor(private ordenService:OrdenService) { }
 
   ngOnInit() {
+    this.loadData();
   }
-
+  loadData()
+  {
+    this.ordenService.getOrdenesList().subscribe(orden => this.ordenes=orden);
+  }
 }

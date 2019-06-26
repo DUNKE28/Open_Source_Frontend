@@ -25,4 +25,11 @@ export class LoginClienteComponent implements OnInit {
       this.invalidLogin = true;
   }
 
+  checkLogin2() {
+    if (this.loginservice.authenticateAdmin(this.username, this.password)) {
+      this.invalidLogin = false;
+    } else
+      this.invalidLogin = true;
+  }
+
 }

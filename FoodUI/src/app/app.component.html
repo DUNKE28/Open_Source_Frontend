@@ -9,16 +9,19 @@
     <div class="contenedor_lista">
       <ul class="nav nav-tabs">
           <li class="nav-item">
-          <a class="nav-link" routerLink="nuevo">Nuevo</a>
+          <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="nuevo">Registrar menú</a>
           </li>
          <li class="nav-item">
-         <a class="nav-link" routerLink="listaSede">Nueva Orden</a>
+         <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="listaSede">Nueva Orden</a>
          </li>
+         <li class="nav-item ">
+          <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="listarOrdenes">Ordenes</a>
+        </li>
          <li class="nav-item gg">
-          <a class="nav-link" routerLink="logout">Logout</a>
+          <a  class="nav-link" routerLink="logout">Logout</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" routerLink="listarCarrito"><i class="glyphicon glyphicon-shopping-cart"></i> Car</a>
+          <a  *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="listarCarrito"><i class="glyphicon glyphicon-shopping-cart"></i> Car</a>
         </li>
      </ul>
     </div>

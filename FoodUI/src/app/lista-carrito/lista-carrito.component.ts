@@ -6,6 +6,7 @@ import { Orden } from '../model/orden';
 import { Time } from '@angular/common';
 import { Sede } from '../model/sede';
 import { Cliente } from '../model/cliente';
+import { DetalleOrdenService } from '../detalle-orden.service';
 
 @Component({
   selector: 'app-lista-carrito',
@@ -15,8 +16,8 @@ import { Cliente } from '../model/cliente';
 })
 export class ListaCarritoComponent implements OnInit {
   carritos:DetalleOrden[];
-   time:Time;
-  constructor(private globals: Globals, private ordenService:OrdenService ) { }
+
+  constructor(private globals: Globals, private ordenService:OrdenService, private detalleOrdenService:DetalleOrdenService) { }
 
   ngOnInit() {
     this.loadData();
@@ -44,24 +45,43 @@ export class ListaCarritoComponent implements OnInit {
     //this.time = JSON.parse(localStorage.getItem('time'));
     //console.log(this.time);
     let orden = new Orden();
+    let ids = Array<number>();
+    let c ;
     orden.sede= new Sede();
     orden.cliente= new Cliente();
     orden.detallesOrden = new Array<DetalleOrden>();
-    orden.horaEntrega = new Date();
-    let date = new Date();
-    
-    orden.fecha = date;
-    orden.horaEntrega = date;
-    console.log(date.getHours()-date.getHours()+1);
-
     orden.cliente.dni = JSON.parse(sessionStorage.getItem('username')); 
     orden.sede.id = JSON.parse(localStorage.getItem('sede_id'));
     orden.estado = 1;
-    orden.detallesOrden = this.carritos;
-    console.log(orden);
-   // this.ordenService.createOrden(this.orden);
-
+  
+    localStorage.setItem('array',JSON.stringify(this.carritos));
     
+    c = JSON.parse(localStorage.getItem('count'));
+
+    orden.detallesOrden = this.carritos;
+
+
+    console.log(orden.detallesOrden);
+
+    orden.detallesOrden.forEach(element => {
+      console.log(element);
+      this.detalleOrdenService.createDetalleOrden(element).subscribe(datos=>console.log(datos), error=>console.log(error));
+    });
+  
+
+    for( var i = c-this.carritos.length; i < c; i++){ 
+      var t=0;
+      orden.detallesOrden[t].id= 0;
+      console.log(c);
+      console.log(this.carritos.length);
+      console.log(orden.detallesOrden[t].id);
+      console.log(orden.detallesOrden);
+      t++;
+    }
+
+    console.log(orden);
+    this.ordenService.createOrden(orden)
+    .subscribe(datos=>console.log(datos), error=>console.log(error));
   }
 
 }
