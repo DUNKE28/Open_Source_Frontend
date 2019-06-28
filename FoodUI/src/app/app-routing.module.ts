@@ -9,6 +9,7 @@ import { AuthGaurdService } from './auth-gaurd.service';
 import { ListaInsumoComponent } from './lista-insumo/lista-insumo.component';
 import { ListaCarritoComponent } from './lista-carrito/lista-carrito.component';
 import { ListaOrdenComponent } from './lista-orden/lista-orden.component';
+import { RegistrarSedeMenuComponent } from './registrar-sede-menu/registrar-sede-menu.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'menu', pathMatch:'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
     {path:'listarInsumos/:menu_id', component:ListaInsumoComponent,canActivate:[AuthGaurdService]},
     {path:'listarCarrito', component:ListaCarritoComponent,canActivate:[AuthGaurdService]},
     {path:'nuevo', component:RegistrarMenuComponent,canActivate:[AuthGaurdService]},
+    {path:'sedeMenu', component:RegistrarSedeMenuComponent,canActivate:[AuthGaurdService]},
     {path:'logout', component:LogoutClienteComponent,canActivate:[AuthGaurdService]},
     {path:'listarOrdenes', component:ListaOrdenComponent,canActivate:[AuthGaurdService]},
 

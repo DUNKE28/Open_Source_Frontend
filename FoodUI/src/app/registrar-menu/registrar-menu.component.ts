@@ -17,6 +17,9 @@ export class RegistrarMenuComponent implements OnInit {
   }
 
   registrarMenu(){
+
+    console.log(this.menu);
+
     this.MenuService.createMenu(this.menu)
     .subscribe(datos=>console.log(datos), error=>console.log(error));
     this.menu = new Menu();

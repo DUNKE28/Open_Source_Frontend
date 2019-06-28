@@ -1,5 +1,7 @@
+//import { Sede } from './sede';
 export class Menu {
     id:number;
     nombre:string;
-    fecha:Date;
+    //fecha:string;
+    //sede: Sede;
 }

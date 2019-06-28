@@ -12,6 +12,10 @@ export class SedeService {
 
   constructor(private http:HttpClient) { }
 
+  createSede(sede:Object):Observable<Object>{
+    return this.http.post(`${this.baseURL}`,sede);
+  }
+
   getSedeById(id:number):Observable<any>{
     return this.http.get(`${this.baseURL}/${id}`);
   }

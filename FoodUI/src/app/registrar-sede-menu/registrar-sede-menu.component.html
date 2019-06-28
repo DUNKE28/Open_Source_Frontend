@@ -1,0 +1,20 @@
+<br/>
+<h2>Registro de Menu en Sede</h2>
+<br/>
+<div>
+  <form (ngSubmit)="registrarMenuSede()">
+    <div class="form-group" > 
+      <label for="menu">Menu</label>
+      <select id="menu" name="menu"
+              [(ngModel)]="menu" class="form-control">
+        <option  *ngFor="let m of menus" [value]="m.id"> 
+          {{m.nombre}}
+        </option>
+      </select>
+    </div>
+     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+  </form>
+</div>
+
+
+
