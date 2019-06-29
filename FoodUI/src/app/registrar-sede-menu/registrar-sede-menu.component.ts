@@ -14,13 +14,16 @@ import * as moment from 'moment';
 export class RegistrarSedeMenuComponent implements OnInit {
 
   menus:Menu[];
+  sedes:Sede[];
+
+  menu_id: number;
+  sede_id: number;
 
   menu: Menu;
-
   sede: Sede;
 
   constructor(private menuService:MenuService,private sedeService:SedeService) { 
-
+    this.sedeService.getSedeList().subscribe(sedes=>this.sedes=sedes);
     this.menuService.getMenusList()
     .subscribe(menus=>this.menus=menus);
   }
@@ -30,43 +33,24 @@ export class RegistrarSedeMenuComponent implements OnInit {
   }
 
   registrarMenuSede(){
-    //let empForm: NgForm; //obtener sede  //id
-    //let empForm: NgForm;  // obtener menu  //id
 
     this.menu = new Menu();
-    this.menu.id=Number();
-    this.menu.nombre=String();
 
 
     this.sede = new Sede();
-    this.sede.menus=new Array<Menu>();
-    this.sede.id = Number();
-    this.sede.nombre=String();
 
-  
-    //this.sedeService.getSedeById(2).subscribe(sede=>this.sede=sede); //probar id 2
-    //this.menuService.getMenuById(3).subscribe(menu=>this.menu=menu); // probar id 3
+    for (let index = 0; index < this.sedes.length; index++) {
+      if(this.sedes[index].id==this.sede_id) this.sede = this.sedes[index];
+    }
 
-    this.menu.id=3;
-    this.menu.nombre="Vegetariano";
-
-    this.sede.id=2;
-    this.sede.nombre="Monterrico";
-
+    for (let index = 0; index < this.menus.length; index++) {
+      if(this.menus[index].id==this.menu_id) this.menu = this.menus[index];
+    }
 
     this.sede.menus.push(this.menu);
-    
-    console.log(this.sede);
 
-    console.log("listo");
+    this.sedeService.createSede(this.sede)
+    .subscribe(datos=>console.log(datos), error=>console.log(error));
 
-    //this.sedeService.createSede(this.sede)
-    //.subscribe(datos=>console.log(datos), error=>console.log(error));
-
-    console.log("listoN");
   }
-
-
-
-
 }

@@ -1,14 +1,13 @@
 <br/>
-<h2>Registro de Menus</h2>
+<h2>Registro de Sedes</h2>
 <br/>
 <div>
-  <form (ngSubmit)="registrarMenu()">
+  <form (ngSubmit)="registrarSede()">
     <div class="form-group ">
-      <label for="nombre">Nombre del menu:</label>
+      <label for="nombre">Nombre de la sede:</label>
       <input type="text" class="form-control" id="nombre" name="nombre" 
-      placeholder="Ingrese el nombre" required [(ngModel)]="menu.nombre">
+      placeholder="Ingrese el nombre" required [(ngModel)]="sede.nombre">
     </div>
      <button type="submit" class="btn btn-primary btn-block">Guardar</button>
   </form>
 </div>
-

@@ -1,0 +1,24 @@
+<br/>
+<h2>Registro de Insumo en Menu</h2>
+<br/>
+<div>
+    <div class="form-group" > 
+        <label for="insumo">Insumo</label>
+        <select id="insumo" name="insumo"
+                [(ngModel)]="insumo_id" class="form-control">
+          <option  *ngFor="let i of insumos" [value]="i.id"> 
+            {{i.nombre}}
+          </option>
+        </select>
+    </div>
+    <div class="form-group" > 
+      <label for="menu">Menu</label>
+      <select id="menu" name="menu"
+              [(ngModel)]="menu_id" class="form-control">
+        <option  *ngFor="let m of menus" [value]="m.id"> 
+          {{m.nombre}}
+        </option>
+      </select>
+    </div>
+     <button type="submit" class="btn btn-primary btn-block" (click)="registrarInsumoMenu()">Guardar</button>
+</div>

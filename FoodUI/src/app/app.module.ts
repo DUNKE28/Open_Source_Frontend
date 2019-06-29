@@ -20,7 +20,9 @@ import { LogoutClienteComponent } from './logout-cliente/logout-cliente.componen
 import { ListaSedeComponent } from './lista-sede/lista-sede.component';
 import { Globals } from './globals';
 import { ListaCarritoComponent } from './lista-carrito/lista-carrito.component';
-import { RegistrarSedeMenuComponent } from './registrar-sede-menu/registrar-sede-menu.component'
+import { RegistrarSedeMenuComponent } from './registrar-sede-menu/registrar-sede-menu.component';
+import { RegistrarSedeComponent } from './registrar-sede/registrar-sede.component';
+import { RegistrarMenuInsumoComponent } from './registrar-menu-insumo/registrar-menu-insumo.component'
 
 
 
@@ -41,7 +43,9 @@ import { RegistrarSedeMenuComponent } from './registrar-sede-menu/registrar-sede
     DetalleMenuComponent,
     LogoutClienteComponent,
     ListaCarritoComponent,
-    RegistrarSedeMenuComponent
+    RegistrarSedeMenuComponent,
+    RegistrarSedeComponent,
+    RegistrarMenuInsumoComponent
   ],
   imports: [
     BrowserModule,
