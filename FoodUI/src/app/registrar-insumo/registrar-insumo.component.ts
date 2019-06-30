@@ -5,6 +5,7 @@ import { MenuService } from '../menu.service';
 import { SedeService } from '../sede.service';
 import { Menu } from '../model/menu';
 import { Sede } from '../model/sede';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-insumo',
@@ -25,7 +26,7 @@ export class RegistrarInsumoComponent implements OnInit {
   menu: Menu = new Menu();
   sede: Sede;
 
-  constructor(private insumoService:InsumoService,private menuService:MenuService,private sedeService:SedeService) { 
+  constructor(private insumoService:InsumoService,private menuService:MenuService,private sedeService:SedeService, private router:Router) { 
   this.sedeService.getSedeList().subscribe(sedes=>this.sedes=sedes);
   }
 
@@ -46,14 +47,22 @@ export class RegistrarInsumoComponent implements OnInit {
   }
   registrarInsumo(){
 
+    let igual = false;
     this.insumo.tipo = Number();
     this.insumo.tipo = +this.insumo_tipo;
     for (let index = 0; index < this.menus.length; index++) 
     {if(this.menus[index].id==this.menu_id) this.menu = this.menus[index];}
 
+   this.menu.insumos.forEach(element => {
+     if(element.nombre == this.insumo.nombre) igual = true;
+   });
+   if(igual =! true)
+   {
     this.insumoService.createInsumo(this.insumo).subscribe(datos =>{ this.menu.insumos.push(datos);
       this.menuService.createMenu(this.menu).subscribe(datos=>console.log(this.menu));
+      this.router.navigate(["listaSede"]);
   });
+}
   
   }
 }

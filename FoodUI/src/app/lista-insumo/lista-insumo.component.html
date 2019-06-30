@@ -10,13 +10,13 @@
   
               <div *ngFor="let insumo of insumos" class="cont_ob">
                 <div class="flex_row">
-                    <div *ngIf="insumo.tipo==3" class="name_ob">
+                    <div *ngIf="insumo.tipo==1" class="name_ob">
                      {{insumo.nombre}}
                     </div>
-                    <div *ngIf="insumo.tipo==3" class="precio_ob">
-                        S/. {{insumo.precio}}
+                    <div *ngIf="insumo.tipo==1" class="precio_ob">
+                      {{insumo.precio | currency: 'PEN' }}
                     </div>
-                    <div *ngIf="insumo.tipo==3" class="btn_add">  
+                    <div *ngIf="insumo.tipo==1" class="btn_add">  
                         <button type="button" class="btn btn-outline-primary v" (click)="AgregarInsumo(insumo)">Add</button>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         {{insumo.nombre}}
                       </div>
                       <div *ngIf="insumo.tipo==2" class="precio_ob">
-                          S/. {{insumo.precio}}
+                          {{insumo.precio | currency: 'PEN'  }}
                       </div>
                       <div *ngIf="insumo.tipo==2" class="btn_add">
                           <button type="button" class="btn btn-outline-primary v" (click)="AgregarInsumo(insumo)">Add</button>
@@ -54,13 +54,13 @@
               <div *ngFor="let insumo of insumos" class="cont_ob">
   
                   <div class="flex_row">
-                      <div *ngIf="insumo.tipo==1" class="name_ob">
+                      <div *ngIf="insumo.tipo==3" class="name_ob">
                         {{insumo.nombre}}
                       </div>
-                      <div *ngIf="insumo.tipo==1" class="precio_ob">
-                          {{insumo.precio | currency: 'PEN' | lowercase }}}
+                      <div *ngIf="insumo.tipo==3" class="precio_ob">
+                          {{insumo.precio | currency: 'PEN'  }}
                       </div>
-                      <div *ngIf="insumo.tipo==1" class="btn_add">
+                      <div *ngIf="insumo.tipo==3" class="btn_add">
                           <button type="button" class="btn btn-outline-primary v" (click)="AgregarInsumo(insumo)">Add</button>
                       </div>
                   </div>

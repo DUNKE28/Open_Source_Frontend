@@ -5,6 +5,7 @@ import { Sede } from '../model/sede';
 import { SedeService } from '../sede.service';
 import { InsumoService } from '../insumo.service';
 import { Insumo } from '../model/insumo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-menu',
@@ -24,7 +25,7 @@ export class RegistrarMenuComponent implements OnInit {
   menu2: Menu = new Menu();
   menu_temp: Menu = new Menu();
 
-  constructor(private menuService:MenuService,private sedeService:SedeService) { 
+  constructor(private menuService:MenuService,private sedeService:SedeService,private router: Router) { 
     this.sedeService.getSedeList().subscribe(sedes=>this.sedes=sedes);
 
   }
@@ -40,6 +41,7 @@ export class RegistrarMenuComponent implements OnInit {
     }
     this.menuService.createMenu(this.menu).subscribe( datos =>{ this.sede.menus.push(datos);
       this.sedeService.createSede(this.sede).subscribe(datos=>console.log(this.sede));
+      this.router.navigate(["listaSede"]);
   });
   }
 
