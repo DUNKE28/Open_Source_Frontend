@@ -1,0 +1,66 @@
+*
+{
+    box-sizing: border-box;
+}
+.carta
+{
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.title
+{
+    padding-left: 0.5%;
+    position: relative;
+    margin-top: 4%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+.title:before{
+    content: "";
+    background: black;
+    position: absolute;
+    left: 0;
+    width: 0.2%;
+    height: 100%;
+}
+.contenedores
+{
+    position: relative;
+    width: 80%;
+    margin-left: 5%;
+}
+
+.flex_row{
+    display: flex;
+    flex-direction: row;
+}
+.entradas
+{
+}
+
+.name_ob
+{
+    width: 70%;
+    padding-top: 1.3%;
+    border-bottom: 1.4px dashed black;
+}
+.precio_ob
+{ 
+    padding-top: 1.3%;
+    text-align: right;
+    width: 15%;
+    border-bottom: 1.4px dashed black;
+}
+.btn_add
+{
+    text-align: center;
+    width: 15%;
+}
+.v
+{
+    margin-top: 3%;
+    height: 90%;
+}

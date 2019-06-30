@@ -11,7 +11,7 @@ export class OrdenService {
 
   constructor(private http:HttpClient) { }
 
-  createOrden(orden:Object):Observable<Object>{
+  createOrden(orden:Object):Observable<any>{
     return this.http.post(`${this.baseURL}`,orden);
   }
 

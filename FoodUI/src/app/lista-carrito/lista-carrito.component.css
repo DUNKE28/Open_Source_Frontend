@@ -1,18 +1,30 @@
-.flex_123
+.contenedor
 {
+    background: blue;
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    height: 5%;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+
 }
-.flex_tittle
+.table_2
 {
-    display: inline-block;
-    height: 5%;
-    width: 10%;
+    background: red !important;
+    width: 50% !important;
 }
-.botones
+.centrado
 {
-    height: 5%;
-    width: 20%;
+    background: red !important;
+    width: 70%;
+}
+.btn_prueba
+{
+    background: darkcyan !important;
+    border-radius: 80px !important;
+    padding: 0 !important;
+    display: none;
+}
+.btn_prueba:hover
+{
+cursor: pointer;
 }

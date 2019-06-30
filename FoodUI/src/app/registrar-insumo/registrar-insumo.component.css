@@ -1,0 +1,37 @@
+h2 
+{
+text-align:center;
+display: block;
+}
+.contenedor
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.todo
+{
+    border-radius: 20px;
+    background: #000;
+    opacity: 0.8;
+    text-align: center;
+    width: 20%; 
+    height: 60%;
+    color: white;
+}
+.todo label{
+    display: block;
+}
+.todo input, select
+{
+    width: 70%;
+}
+button
+{
+    margin-top: 10px;
+}
+.con
+{
+    margin-top: 2%;
+}

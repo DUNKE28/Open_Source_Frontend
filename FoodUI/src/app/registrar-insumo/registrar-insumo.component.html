@@ -1,27 +1,45 @@
 <br/>
 <h2>Registro de Isumos</h2>
 <br/>
-<div>
-  <form (ngSubmit)="registrarInsumo()">
-    <div class="form-group ">
+<div class="contenedor">
+
+  <div class="todo">
+    <div class="con">
       <label for="nombre">Nombre del insumo:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" 
+      <input type="text"  id="nombre" name="nombre" 
       placeholder="Ingrese el nombre" required [(ngModel)]="insumo.nombre">
     </div>
-    <div class="form-group ">
+    <div class="con ">
       <label for="nombre">Precio del insumo:</label>
-      <input type="number" min="1" step="any" class="form-control" id="precio" name="precio" 
+      <input type="number" min="1" step="any"  id="precio" name="precio" 
       placeholder="Ingrese el precio" required [(ngModel)]="insumo.precio">
     </div>
-    <div class="form-group" > 
+    <div class="con" > 
       <label for="insumo">Tipo de insumo:</label>
       <select id="insumo" name="insumo"
-              [(ngModel)]="insumo_tipo" class="form-control">
+              [(ngModel)]="insumo_tipo" >
         <option  value="1">Entrada</option>
         <option  value="2">Segundo</option>
         <option  value="3">Bebida</option>
       </select>
     </div>
-     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-  </form>
-</div>
+    <div class="con" > 
+        <label for="sede">Sede</label>
+        <select id="sede" name="sede" [(ngModel)]="sede_id" (change)="load()">
+          <option  *ngFor="let sede of sedes" [value]="sede.id"> 
+            {{sede.nombre}}
+          </option> 
+        </select>
+      </div>
+      <div class="con" > 
+          <label for="menu">Menu</label>
+          <select id="menu" name="menu" [(ngModel)]="menu_id"  >
+            <option  *ngFor="let menu of menus" [value]="menu.id"> 
+              {{menu.nombre}}
+            </option>
+          </select>
+        </div>
+
+     <button type="submit" class="btn btn-primary" (click)="registrarInsumo()">Guardar</button>
+</div>  
+    </div>

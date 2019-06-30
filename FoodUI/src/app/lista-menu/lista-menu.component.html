@@ -1,17 +1,14 @@
-<br/>
-<h2>Listado de Menus</h2>
-<br/>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Acción</th>
-    </tr>
-  </thead>
-</table>
-<div *ngFor="let menu of menus">
-  <app-detalle-menu [menu]='menu'></app-detalle-menu>
-</div>
-
+<div class="flex_xd">
+    <div class="contenedor">
+      <p>Menús</p> 
+      <div class="sub_contenedor">
+        <div [routerLink]="['listarInsumos',menu.id]" *ngFor="let menu of menus" class="xd">
+              <a > {{ menu.nombre }} </a> 
+        </div>  
+    </div>
+    </div>
+    <div class="xdddddd">
+    <router-outlet></router-outlet>
+    </div>
+    </div>
+    

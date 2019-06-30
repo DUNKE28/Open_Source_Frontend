@@ -1,14 +1,25 @@
 <br/>
 <h2>Registro de Menus</h2>
 <br/>
-<div>
-  <form (ngSubmit)="registrarMenu()">
-    <div class="form-group ">
+<div class="contenedor">
+
+    <div class="todo">
+
+    <div class="con ">
       <label for="nombre">Nombre del menu:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" 
-      placeholder="Ingrese el nombre" required [(ngModel)]="menu.nombre">
+      <input type="text"  id="nombre" name="nombre" 
+      placeholder="Ingrese el nombre" [(ngModel)]="menu.nombre">
     </div>
-     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-  </form>
+
+    <div class="con" > 
+      <label for="sede">Sede</label>
+      <select id="sede" name="sede" [(ngModel)]="sede_id" >
+        <option  *ngFor="let sede of sedes" [value]="sede.id"> 
+          {{sede.nombre}}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="registrarMenuSede()">Guardar</button>
+    </div>
 </div>
 

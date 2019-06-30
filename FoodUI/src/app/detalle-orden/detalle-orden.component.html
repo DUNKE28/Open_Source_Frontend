@@ -1,3 +1,21 @@
-<p>
-  detalle-orden works!
-</p>
+<br/>
+<h2 style="text-align: center;">Detalle de orden</h2>
+<br/>
+<table class="table ml-5 p-5">
+  <thead>
+    <tr>
+      <th scope="col">Insumo</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let detalle of detalles">
+    <tr>
+      <td>{{detalle.insumo.nombre}}</td>
+      <td>{{detalle.cantidad}}</td> 
+      <td>{{detalle.insumo.precio}}</td> 
+      <td>{{detalle.precio}}</td>
+    </tr>
+  </tbody>
+</table>

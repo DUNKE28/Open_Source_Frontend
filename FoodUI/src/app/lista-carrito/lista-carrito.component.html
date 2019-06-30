@@ -1,52 +1,38 @@
-<br/>
-<div class="flex_123">
 
-  <div class="flex_tittle">
-      <h2>Carrito:</h2>
-  </div>
-    <div class="botones">
-      <button class="btn btn-info" (click)="comprar()"> Comprar </button>
-      <button class="btn btn-info" (click)="cancelar()"> Cancelar Compra </button>
-  </div>
+<div class="contendor" style="width:100vw; display: flex; justify-content: center; text-align: center; flex-direction: column; align-items: center; ">
 
+  <div class="centrado" style="width: 70%; margin-top: 5%;">
+      <div style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;margin-bottom: 4%; font-weight: bold; color: red;">Lista de Compras</div>
+    <table class="table table_2"> 
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th> 
+            <th scope="col">Precio</th>
+            <th scope="col">Total</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+
+        <tbody *ngFor="let detalle of carritos">
+          <tr>
+            <td>{{detalle.insumo.nombre}}</td>
+            <td><input type="text" [(ngModel)]="detalle.cantidad" (blur)="calcular(detalle.id)" name="cantidad"(keyup.enter)="calcular(detalle.id)"></td>
+            <td>{{detalle.insumo.precio}}</td>
+            <td>{{ detalle.precio }}</td>  
+            <td>
+                <div class="container">
+                    <div class="">
+                      <div class="btn_prueba" style="border-radius: 50%; background: transparent; width: 10%; text-align: center; cursor: pointer; color:red; font-size: 18px; font-weight: bold; " (click)="deleteDetalle(detalle.id)">X </div>
+                    </div>
+                  </div>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+  <div *ngIf="data" style="width: 70%; display: flex; justify-content: flex-end;">
+    <button class="btn btn-info mr-2" (click)="cancelar()">Cancelar Compra</button>
+    <button class="btn btn-info mr-2" (click)="comprar()">Comprar</button>
+  </div>
 </div>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Insumo</th>
-      <th scope="col">Accion</th>
-    </tr>
-  </thead>
-
-  <tbody *ngFor="let detalle of carritos">
-    <tr>
-      <td>{{detalle.id}}</td>
-      <td>{{detalle.precio}}</td>
-      <td>{{detalle.cantidad}}</td>
-      <td>{{detalle.insumo.nombre}}</td>
-      <td>
-          <div class="container">
-              <div class="btn-group btn-lg-group-sm">
-                <button type="button" class="btn btn-info btn-sm" (click)="deleteDetalle(detalle.id)">
-                  <i class="glyphicon-plus"></i>Detele  
-                </button>
-              </div>
-            </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<script>
-
-
-$('input').keydown(function()
-{
-  console.log("xdddddd");
-});
-
-</script>

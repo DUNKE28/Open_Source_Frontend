@@ -10,7 +10,8 @@ import { ListaMenuComponent } from '../lista-menu/lista-menu.component';
 })
 export class DetalleMenuComponent implements OnInit {
 
-  @Input() menu:Menu;
+ 
+  orden_id: number;
   
   constructor(private menuService:MenuService,
     private listado:ListaMenuComponent) { }
@@ -18,9 +19,5 @@ export class DetalleMenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteMenu(){
-    this.menuService.deleteMenu(this.menu.id)
-    .subscribe(datos=>{this.listado.loadData();})
-  }
 
 }

@@ -5,6 +5,7 @@ import { RegistrarMenuComponent } from './registrar-menu/registrar-menu.componen
 import { LoginClienteComponent } from './login-cliente/login-cliente.component';
 import { LogoutClienteComponent } from './logout-cliente/logout-cliente.component';
 import { ListaSedeComponent } from './lista-sede/lista-sede.component';
+import { DetalleOrdenComponent } from './detalle-orden/detalle-orden.component'
 import { AuthGaurdService } from './auth-gaurd.service';
 import { ListaInsumoComponent } from './lista-insumo/lista-insumo.component';
 import { ListaCarritoComponent } from './lista-carrito/lista-carrito.component';
@@ -15,19 +16,19 @@ import { RegistrarInsumoComponent } from './registrar-insumo/registrar-insumo.co
 import { RegistrarMenuInsumoComponent } from './registrar-menu-insumo/registrar-menu-insumo.component';
 
 const routes: Routes = [
-    {path:'', redirectTo:'menu', pathMatch:'full'},
+    {path:'', redirectTo:'listaSede', pathMatch:'full'},
     {path:'login', component:LoginClienteComponent},
-    {path:'listaSede', component:ListaSedeComponent,canActivate:[AuthGaurdService]},
-    {path:'listarMenus/:sede_id', component:ListaMenuComponent,canActivate:[AuthGaurdService]},
-    {path:'listarInsumos/:menu_id', component:ListaInsumoComponent,canActivate:[AuthGaurdService]},
-    {path:'listarCarrito', component:ListaCarritoComponent,canActivate:[AuthGaurdService]},
-    {path:'registrarMenu', component:RegistrarMenuComponent,canActivate:[AuthGaurdService]},
-    {path:'sedeMenu', component:RegistrarSedeMenuComponent,canActivate:[AuthGaurdService]},
-    {path:'logout', component:LogoutClienteComponent,canActivate:[AuthGaurdService]},
-    {path:'listarOrdenes', component:ListaOrdenComponent,canActivate:[AuthGaurdService]},
-    {path:'registrarSede', component:RegistrarSedeComponent,canActivate:[AuthGaurdService]},
-    {path:'registrarInsumo', component:RegistrarInsumoComponent,canActivate:[AuthGaurdService]},
-    {path:'menuInsumo', component:RegistrarMenuInsumoComponent,canActivate:[AuthGaurdService]},
+    {path:'listaSede', component:ListaSedeComponent},
+    {path:'listarMenus/:sede_id', component:ListaMenuComponent, children:[  {path:'listarInsumos/:menu_id', component:ListaInsumoComponent}]},
+    {path:'listarCarrito', component:ListaCarritoComponent},
+    {path:'listarDetalleOrden/:orden_id', component:DetalleOrdenComponent},
+    {path:'registrarMenu', component:RegistrarMenuComponent},
+    {path:'sedeMenu', component:RegistrarSedeMenuComponent},
+    {path:'logout', component:LogoutClienteComponent},
+    {path:'listarOrdenes', component:ListaOrdenComponent},
+    {path:'registrarSede', component:RegistrarSedeComponent},
+    {path:'registrarInsumo', component:RegistrarInsumoComponent},
+    {path:'menuInsumo', component:RegistrarMenuInsumoComponent},
 ];
 
 @NgModule({

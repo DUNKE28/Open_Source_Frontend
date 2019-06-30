@@ -1,30 +1,104 @@
-<br/>
-<h2>Listado de Insumos</h2>
-<br/>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Acción</th>
-    </tr>
-  </thead>
+<div class="carta">
 
-  <tbody *ngFor="let insumo of insumos">
-    <tr>
-      <td>{{insumo.id}}</td>
-      <td>{{insumo.nombre}}</td>
-      <td>{{insumo.precio}}</td> 
-      <td>
-          <div class="container">
-              <div class="btn-group btn-lg-group-sm">
-                <button type="button" class="btn btn-info btn-sm" (click)="AgregarInsumo(insumo)">
-                  <i class="glyphicon-plus"></i>+ Agregar  
-                </button>
+    <!-- Entradas -->
+   
+          <div class="entradas contenedores">
+  
+              <div class="entrada_title title">
+                  <p>Entradas</p>
               </div>
-            </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  
+              <div *ngFor="let insumo of insumos" class="cont_ob">
+                <div class="flex_row">
+                    <div *ngIf="insumo.tipo==3" class="name_ob">
+                     {{insumo.nombre}}
+                    </div>
+                    <div *ngIf="insumo.tipo==3" class="precio_ob">
+                        S/. {{insumo.precio}}
+                    </div>
+                    <div *ngIf="insumo.tipo==3" class="btn_add">  
+                        <button type="button" class="btn btn-outline-primary v" (click)="AgregarInsumo(insumo)">Add</button>
+                    </div>
+                </div>
+              </div>
+  
+          </div>
+          <!-- Menus -->
+          <div class="platos contenedores">
+                <div class="platos_title title">
+                  <p>Platos</p>
+              </div>
+  
+              <div *ngFor="let insumo of insumos" class="cont_ob">
+  
+                  <div class="flex_row">
+                      <div *ngIf="insumo.tipo==2" class="name_ob">
+                        {{insumo.nombre}}
+                      </div>
+                      <div *ngIf="insumo.tipo==2" class="precio_ob">
+                          S/. {{insumo.precio}}
+                      </div>
+                      <div *ngIf="insumo.tipo==2" class="btn_add">
+                          <button type="button" class="btn btn-outline-primary v" (click)="AgregarInsumo(insumo)">Add</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Bebidas -->
+          <div class="bebidas contenedores">
+                <div class="bebidas_title title">
+                  <p>Bebidas</p>
+              </div>
+  
+              <div *ngFor="let insumo of insumos" class="cont_ob">
+  
+                  <div class="flex_row">
+                      <div *ngIf="insumo.tipo==1" class="name_ob">
+                        {{insumo.nombre}}
+                      </div>
+                      <div *ngIf="insumo.tipo==1" class="precio_ob">
+                          {{insumo.precio | currency: 'PEN' | lowercase }}}
+                      </div>
+                      <div *ngIf="insumo.tipo==1" class="btn_add">
+                          <button type="button" class="btn btn-outline-primary v" (click)="AgregarInsumo(insumo)">Add</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+  
+  
+  
+  <!--
+  <br/>
+  <h2>Listado de Insumos</h2>
+  <br/>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+  
+    <tbody *ngFor="let insumo of insumos">
+      <tr>
+        <td>{{insumo.id}}</td>
+        <td>{{insumo.nombre}}</td>
+        <td>{{insumo.precio}}</td> 
+        <td>
+            <div class="container">
+                <div class="btn-group btn-lg-group-sm">
+                  <button type="button" class="btn btn-info btn-sm" (click)="AgregarInsumo(insumo)">
+                    <i class="glyphicon-plus"></i>+ Agregar  
+                  </button>
+                </div>
+              </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  -->

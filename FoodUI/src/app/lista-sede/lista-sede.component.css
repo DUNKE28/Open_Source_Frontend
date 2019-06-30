@@ -20,26 +20,29 @@
 }
 .contenedor_sede
 {
+    position: relative;
+    border-radius: 50%;
+    height:30vh;
+    background-image: url('https://www.upc.edu.pe/nosotros/campus/campus-monterrico/img/monterrico-1.jpg');
+    background-size: cover;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-img{
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    border-radius: 10%;
 }
 .contenedor_todo :hover {
     cursor: pointer;
     transition-duration: 0.5;
-    transform: scale(1.014);
+    transform: scale(1.05);
+  
 }
-p{
-    left: 80px;
-    bottom: 50px;
+.con_text{
 
+    width: 100%;
+    height: auto;
+    text-align: center;
     position: absolute;
-    z-index: 10000;
+    font-size: 22px;
+    font-style: oblique;
+    bottom: 35%;
     color :white;
-    
 }
+

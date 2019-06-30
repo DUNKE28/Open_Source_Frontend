@@ -11,7 +11,10 @@ export class DetalleOrdenService {
 
   constructor(private http:HttpClient) { }
 
-  createDetalleOrden(detalleOrden:Object):Observable<Object>{
+  createDetalleOrden(detalleOrden:Object):Observable<any>{
     return this.http.post(`${this.baseURL}`,detalleOrden);
+  }
+  getDetalleList():Observable<any>{
+    return this.http.get(`${this.baseURL}`);
   }
 }

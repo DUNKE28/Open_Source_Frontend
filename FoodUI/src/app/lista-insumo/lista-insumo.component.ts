@@ -27,6 +27,7 @@ export class ListaInsumoComponent implements OnInit {
   }
 
   loadData(){
+
     let id = +this._route.snapshot.paramMap.get('menu_id');
     this.menuService.getMenuById(id)
     .subscribe(datos=>this.insumos=datos.insumos);
@@ -41,6 +42,18 @@ export class ListaInsumoComponent implements OnInit {
   }
   AgregarInsumo(insumo)
   {
+    let equal = false;
+    for( var i=0; i< this.globals.carrito.length; i++)
+    {
+      if(this.globals.carrito[i].insumo.nombre == insumo.nombre)
+      {
+        this.globals.carrito[i].cantidad += 1;
+        this.globals.carrito[i].precio = insumo.precio * this.globals.carrito[i].cantidad;
+        equal=true;
+      }
+    }
+    if(equal == false)
+    {
     let det = new DetalleOrden();
     det.id = this.c;
     this.c +=1;
@@ -49,9 +62,10 @@ export class ListaInsumoComponent implements OnInit {
     det.insumo = insumo;
     console.log(insumo);
     this.globals.carrito.push(det);
+    console.log(this.c);
+    }
     localStorage.setItem('array',JSON.stringify(this.globals.carrito));
     localStorage.setItem('count',JSON.stringify(this.c));
-    console.log(this.c);
   }
 
 }

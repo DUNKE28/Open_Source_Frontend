@@ -9,4 +9,5 @@ export class Orden {
     sede:Sede;
     cliente: Cliente;
     detallesOrden: Array<DetalleOrden>;
+    fecha:Date;
 }

@@ -18,6 +18,7 @@ export class ListaOrdenComponent implements OnInit {
   }
   loadData()
   {
-    this.ordenService.getOrdenesList().subscribe(orden => this.ordenes=orden);
+    let cliente = JSON.parse(sessionStorage.getItem('username'));
+    this.ordenService.getOrdenesList().subscribe(datos => this.ordenes=datos.filter( x => x.cliente.dni == cliente).sort((a, b) => a.fecha < b.fecha));
   }
 }

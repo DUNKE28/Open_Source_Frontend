@@ -11,7 +11,7 @@ export class MenuService {
 
   constructor(private http:HttpClient) { }
 
-  createMenu(menu:Object):Observable<Object>{
+  createMenu(menu:Object):Observable<any>{
     return this.http.post(`${this.baseURL}`,menu);
   }
 

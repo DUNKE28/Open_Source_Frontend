@@ -11,7 +11,7 @@ export class InsumoService {
 
   constructor(private http:HttpClient) { }
 
-  createInsumo(insumo:Object):Observable<Object>{
+  createInsumo(insumo:Object):Observable<any>{
     return this.http.post(`${this.baseURL}`,insumo);
   }
 

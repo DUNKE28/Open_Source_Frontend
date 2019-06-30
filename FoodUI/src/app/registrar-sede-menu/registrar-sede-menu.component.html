@@ -1,6 +1,4 @@
-<br/>
-<h2>Registro de Menu en Sede</h2>
-<br/>
+
 <div>
     <div class="form-group" > 
       <label for="menu">Menu</label>
@@ -13,8 +11,7 @@
     </div>
     <div class="form-group" > 
       <label for="sede">Sede</label>
-      <select id="sede" name="sede"
-              [(ngModel)]="sede_id" class="form-control">
+      <select id="sede" name="sede" [(ngModel)]="sede_id" class="form-control">
         <option  *ngFor="let s of sedes" [value]="s.id"> 
           {{s.nombre}}
         </option>
